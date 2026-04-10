@@ -1,0 +1,37 @@
+.grid {
+    display: grid;
+    grid-template-columns: minmax(26rem, 32rem) minmax(0, 1fr);
+    gap: 2.4rem;
+    align-items: start;
+}
+
+.leftColumn,
+.rightColumn {
+    min-width: 0;
+}
+
+.liveDot {
+    width: 0.8rem;
+    height: 0.8rem;
+    border-radius: 50%;
+    background-color: #e53e3e;
+    animation: pulse 2s ease-in-out infinite;
+    pointer-events: none;
+}
+
+.liveDotDisabled {
+    background-color: rgba(255, 255, 255, 0.2);
+    opacity: 0.45;
+    animation: none;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+}
+
+@media (max-width: 1024px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
